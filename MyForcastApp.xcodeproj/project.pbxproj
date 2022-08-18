@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53CF2AAC2727FC92DD305337 /* Pods_MyForcastApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F018912BA66E6F04F9D9669 /* Pods_MyForcastApp.framework */; };
 		FA10A9B328AEAB84003A6FF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9B228AEAB84003A6FF1 /* AppDelegate.swift */; };
 		FA10A9B528AEAB84003A6FF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9B428AEAB84003A6FF1 /* SceneDelegate.swift */; };
-		FA10A9B728AEAB84003A6FF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9B628AEAB84003A6FF1 /* ViewController.swift */; };
 		FA10A9BA28AEAB84003A6FF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA10A9B828AEAB84003A6FF1 /* Main.storyboard */; };
 		FA10A9BD28AEAB84003A6FF1 /* MyForcastApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9BB28AEAB84003A6FF1 /* MyForcastApp.xcdatamodeld */; };
 		FA10A9BF28AEAB8C003A6FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA10A9BE28AEAB8C003A6FF1 /* Assets.xcassets */; };
@@ -17,6 +17,16 @@
 		FA10A9CD28AEAB8D003A6FF1 /* MyForcastAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9CC28AEAB8D003A6FF1 /* MyForcastAppTests.swift */; };
 		FA10A9D728AEAB8D003A6FF1 /* MyForcastAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9D628AEAB8D003A6FF1 /* MyForcastAppUITests.swift */; };
 		FA10A9D928AEAB8D003A6FF1 /* MyForcastAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9D828AEAB8D003A6FF1 /* MyForcastAppUITestsLaunchTests.swift */; };
+		FA10A9ED28AEB05A003A6FF1 /* HomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9E928AEB05A003A6FF1 /* HomePageVM.swift */; };
+		FA10A9EE28AEB05A003A6FF1 /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9EA28AEB05A003A6FF1 /* HomePageModel.swift */; };
+		FA10A9EF28AEB05A003A6FF1 /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9EB28AEB05A003A6FF1 /* HomePageVC.swift */; };
+		FA10A9F028AEB05A003A6FF1 /* HomePageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9EC28AEB05A003A6FF1 /* HomePageService.swift */; };
+		FA10A9F428AEB098003A6FF1 /* HomePageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA10A9F228AEB098003A6FF1 /* HomePageVC.xib */; };
+		FA10A9F728AEB12A003A6FF1 /* MyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9F628AEB12A003A6FF1 /* MyCoordinator.swift */; };
+		FA10A9F928AEB16D003A6FF1 /* MyVCGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9F828AEB16D003A6FF1 /* MyVCGenerator.swift */; };
+		FA10A9FB28AEB1BC003A6FF1 /* MyBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9FA28AEB1BC003A6FF1 /* MyBaseRepository.swift */; };
+		FA10AA0028AEB2F5003A6FF1 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9FF28AEB2F5003A6FF1 /* HomeRepository.swift */; };
+		FA10AA0228AEB5F9003A6FF1 /* BasePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10AA0128AEB5F9003A6FF1 /* BasePageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F018912BA66E6F04F9D9669 /* Pods_MyForcastApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyForcastApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C443E82BC03F5DF5CF1C7F62 /* Pods-MyForcastApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyForcastApp.debug.xcconfig"; path = "Target Support Files/Pods-MyForcastApp/Pods-MyForcastApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FA10A9AF28AEAB84003A6FF1 /* MyForcastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyForcastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA10A9B228AEAB84003A6FF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA10A9B428AEAB84003A6FF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA10A9B628AEAB84003A6FF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA10A9B928AEAB84003A6FF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA10A9BC28AEAB84003A6FF1 /* MyForcastApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyForcastApp.xcdatamodel; sourceTree = "<group>"; };
 		FA10A9BE28AEAB8C003A6FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +62,17 @@
 		FA10A9D228AEAB8D003A6FF1 /* MyForcastAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyForcastAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA10A9D628AEAB8D003A6FF1 /* MyForcastAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyForcastAppUITests.swift; sourceTree = "<group>"; };
 		FA10A9D828AEAB8D003A6FF1 /* MyForcastAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyForcastAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA10A9E928AEB05A003A6FF1 /* HomePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVM.swift; sourceTree = "<group>"; };
+		FA10A9EA28AEB05A003A6FF1 /* HomePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
+		FA10A9EB28AEB05A003A6FF1 /* HomePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
+		FA10A9EC28AEB05A003A6FF1 /* HomePageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageService.swift; sourceTree = "<group>"; };
+		FA10A9F228AEB098003A6FF1 /* HomePageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageVC.xib; sourceTree = "<group>"; };
+		FA10A9F628AEB12A003A6FF1 /* MyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoordinator.swift; sourceTree = "<group>"; };
+		FA10A9F828AEB16D003A6FF1 /* MyVCGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVCGenerator.swift; sourceTree = "<group>"; };
+		FA10A9FA28AEB1BC003A6FF1 /* MyBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBaseRepository.swift; sourceTree = "<group>"; };
+		FA10A9FF28AEB2F5003A6FF1 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		FA10AA0128AEB5F9003A6FF1 /* BasePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageVC.swift; sourceTree = "<group>"; };
+		FBED8773B9575CDAE19FE71D /* Pods-MyForcastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyForcastApp.release.xcconfig"; path = "Target Support Files/Pods-MyForcastApp/Pods-MyForcastApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53CF2AAC2727FC92DD305337 /* Pods_MyForcastApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +101,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12E315754A42AC8A8FFFC50E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F018912BA66E6F04F9D9669 /* Pods_MyForcastApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1618F308AE4AD5758296D9F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C443E82BC03F5DF5CF1C7F62 /* Pods-MyForcastApp.debug.xcconfig */,
+				FBED8773B9575CDAE19FE71D /* Pods-MyForcastApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA10A9A628AEAB84003A6FF1 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +125,8 @@
 				FA10A9CB28AEAB8D003A6FF1 /* MyForcastAppTests */,
 				FA10A9D528AEAB8D003A6FF1 /* MyForcastAppUITests */,
 				FA10A9B028AEAB84003A6FF1 /* Products */,
+				1618F308AE4AD5758296D9F1 /* Pods */,
+				12E315754A42AC8A8FFFC50E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +143,11 @@
 		FA10A9B128AEAB84003A6FF1 /* MyForcastApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA10A9F528AEB11D003A6FF1 /* helpers */,
+				FA10A9E628AEB02A003A6FF1 /* data */,
+				FA10A9E528AEB023003A6FF1 /* ui */,
 				FA10A9B228AEAB84003A6FF1 /* AppDelegate.swift */,
 				FA10A9B428AEAB84003A6FF1 /* SceneDelegate.swift */,
-				FA10A9B628AEAB84003A6FF1 /* ViewController.swift */,
 				FA10A9B828AEAB84003A6FF1 /* Main.storyboard */,
 				FA10A9BE28AEAB8C003A6FF1 /* Assets.xcassets */,
 				FA10A9C028AEAB8C003A6FF1 /* LaunchScreen.storyboard */,
@@ -130,6 +174,93 @@
 			path = MyForcastAppUITests;
 			sourceTree = "<group>";
 		};
+		FA10A9E528AEB023003A6FF1 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FA10A9E828AEB035003A6FF1 /* customViews */,
+				FA10A9E728AEB02F003A6FF1 /* pages */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		FA10A9E628AEB02A003A6FF1 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				FA10A9FD28AEB2CE003A6FF1 /* local */,
+				FA10A9FC28AEB2C5003A6FF1 /* api */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		FA10A9E728AEB02F003A6FF1 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				FA10AA0428AEB64E003A6FF1 /* base */,
+				FA10AA0328AEB640003A6FF1 /* homePage */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
+		FA10A9E828AEB035003A6FF1 /* customViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = customViews;
+			sourceTree = "<group>";
+		};
+		FA10A9F528AEB11D003A6FF1 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA10A9F628AEB12A003A6FF1 /* MyCoordinator.swift */,
+				FA10A9F828AEB16D003A6FF1 /* MyVCGenerator.swift */,
+				FA10A9FA28AEB1BC003A6FF1 /* MyBaseRepository.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		FA10A9FC28AEB2C5003A6FF1 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				FA10A9FE28AEB2DD003A6FF1 /* repositories */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		FA10A9FD28AEB2CE003A6FF1 /* local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		FA10A9FE28AEB2DD003A6FF1 /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FA10A9FF28AEB2F5003A6FF1 /* HomeRepository.swift */,
+			);
+			path = repositories;
+			sourceTree = "<group>";
+		};
+		FA10AA0328AEB640003A6FF1 /* homePage */ = {
+			isa = PBXGroup;
+			children = (
+				FA10A9EC28AEB05A003A6FF1 /* HomePageService.swift */,
+				FA10A9EA28AEB05A003A6FF1 /* HomePageModel.swift */,
+				FA10A9E928AEB05A003A6FF1 /* HomePageVM.swift */,
+				FA10A9EB28AEB05A003A6FF1 /* HomePageVC.swift */,
+				FA10A9F228AEB098003A6FF1 /* HomePageVC.xib */,
+			);
+			path = homePage;
+			sourceTree = "<group>";
+		};
+		FA10AA0428AEB64E003A6FF1 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				FA10AA0128AEB5F9003A6FF1 /* BasePageVC.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA10A9DC28AEAB8D003A6FF1 /* Build configuration list for PBXNativeTarget "MyForcastApp" */;
 			buildPhases = (
+				D3FA679888E93DF6FF239C1D /* [CP] Check Pods Manifest.lock */,
 				FA10A9AB28AEAB84003A6FF1 /* Sources */,
 				FA10A9AC28AEAB84003A6FF1 /* Frameworks */,
 				FA10A9AD28AEAB84003A6FF1 /* Resources */,
+				33858347AB838AD8DFE83D1A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +369,7 @@
 			files = (
 				FA10A9C228AEAB8C003A6FF1 /* LaunchScreen.storyboard in Resources */,
 				FA10A9BF28AEAB8C003A6FF1 /* Assets.xcassets in Resources */,
+				FA10A9F428AEB098003A6FF1 /* HomePageVC.xib in Resources */,
 				FA10A9BA28AEAB84003A6FF1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,15 +390,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33858347AB838AD8DFE83D1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyForcastApp/Pods-MyForcastApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyForcastApp/Pods-MyForcastApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyForcastApp/Pods-MyForcastApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3FA679888E93DF6FF239C1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyForcastApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA10A9AB28AEAB84003A6FF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA10A9B728AEAB84003A6FF1 /* ViewController.swift in Sources */,
+				FA10A9F728AEB12A003A6FF1 /* MyCoordinator.swift in Sources */,
+				FA10A9F928AEB16D003A6FF1 /* MyVCGenerator.swift in Sources */,
+				FA10A9ED28AEB05A003A6FF1 /* HomePageVM.swift in Sources */,
+				FA10AA0228AEB5F9003A6FF1 /* BasePageVC.swift in Sources */,
 				FA10A9B328AEAB84003A6FF1 /* AppDelegate.swift in Sources */,
+				FA10A9EE28AEB05A003A6FF1 /* HomePageModel.swift in Sources */,
+				FA10A9EF28AEB05A003A6FF1 /* HomePageVC.swift in Sources */,
 				FA10A9BD28AEAB84003A6FF1 /* MyForcastApp.xcdatamodeld in Sources */,
 				FA10A9B528AEAB84003A6FF1 /* SceneDelegate.swift in Sources */,
+				FA10A9FB28AEB1BC003A6FF1 /* MyBaseRepository.swift in Sources */,
+				FA10A9F028AEB05A003A6FF1 /* HomePageService.swift in Sources */,
+				FA10AA0028AEB2F5003A6FF1 /* HomeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,11 +620,13 @@
 		};
 		FA10A9DD28AEAB8D003A6FF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C443E82BC03F5DF5CF1C7F62 /* Pods-MyForcastApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S5363W839Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyForcastApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -448,6 +634,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,11 +650,13 @@
 		};
 		FA10A9DE28AEAB8D003A6FF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBED8773B9575CDAE19FE71D /* Pods-MyForcastApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S5363W839Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyForcastApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -475,6 +664,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
