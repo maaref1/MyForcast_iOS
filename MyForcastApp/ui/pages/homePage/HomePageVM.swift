@@ -36,17 +36,16 @@ class HomePageVM {
                 switch input {
                 case .performAction(let input):
                     print("will call service using this params: \(input)")
+                    self.mService.noneService()
                     return
                 }
                 
-                self.mService.noneService()
-                break
             case .completed:
                 print("completed")
-                break
+                
             case .error(let err):
                 print("error found : \(err)")
-                break
+
             }
         }.disposed(by: disposeBag)
     }
@@ -59,13 +58,13 @@ class HomePageVM {
                 if let res = res as? HomePageOutputResult {
                     self.sendOutputResponse(result: res, error: nil)
                 }
-                break
+
             case .completed:
                 print("completed")
-                break
+
             case .error(let err):
                 print("error found : \(err)")
-                break
+
             }
         }.disposed(by: disposeBag)
     }
@@ -74,8 +73,8 @@ class HomePageVM {
     func sendOutputResponse(result: HomePageOutputResult, error: Error?) {
         switch result {
         case .didFinish(let result):
+            print("result : \(result)")
             // save or do some treatment here
-            break
 
         default:
             break

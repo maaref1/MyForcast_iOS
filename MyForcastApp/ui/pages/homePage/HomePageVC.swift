@@ -7,12 +7,23 @@ import UIKit
 import RxSwift
 
 class HomePageVC: BasePageVC {
-
-    @IBOutlet weak var mBtnView: UIButton!
-    @IBOutlet weak var mTextField: UITextField!
+    
+    @IBOutlet weak var mBtnAddCity: UIView!
+    @IBOutlet weak var mTxtSearchCity: UITextField!
+    @IBOutlet weak var mTableView: UITableView!
     
     var viewModel: HomePageVM!
     var disposeBag = DisposeBag()
+    
+    // tableManager is used to handle all the tableView's actions
+    lazy var tableManager: MyHomeTableManagerProtocol = {
+        return MyHomeTableManager()
+    }()
+    
+    // Timer used to wait for user to end editing to search the city
+    var timer: Timer?
+    // store the inserted value to search on APi when timer is done
+    var searchValue: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +35,33 @@ class HomePageVC: BasePageVC {
     func initSubViews() {
         self.initTapButtons()
         self.initTextFieldsChanged()
+        self.initTableView()
+    }
+    
+    // This function will init tableView config
+    func initTableView() {
+        self.mTableView.delegate = self.tableManager
+        self.mTableView.dataSource = self.tableManager
+        self.mTableView.register(WeatherHomeCell.nib(),
+                                 forCellReuseIdentifier: WeatherHomeCell.nibName)
+        
+        self.tableManager.setListData(list: [1, 2, 3, 4, 5])
+        self.mTableView.reloadData()
     }
     
     // This function will init textFields actions
     func initTextFieldsChanged() {
+        self.mTxtSearchCity.delegate = self
+        self.mTxtSearchCity.addTarget(self,
+                                      action: #selector(textFieldEditingDidChange(_:)),
+                                      for: .editingChanged)
+        self.addDoneButtonExitKeyboard()
     }
     
     // This function will init buttons actions
     func initTapButtons() {
+        self.mBtnAddCity.setOnClickListener(target: self,
+                                            action: #selector(onClickAddCity))
     }
     
     // This function will observe actions given by the ViewModel
@@ -40,10 +70,10 @@ class HomePageVC: BasePageVC {
             switch result {
             case .next(let res):
                 self.handleViewModelActions(action: res)
-                break
+                
             case .error(let err):
                 print("error found: \(err)")
-                break
+                
             case .completed:
                 break
             }
@@ -51,7 +81,7 @@ class HomePageVC: BasePageVC {
     }
     
     // This function will handle the actions sent by the VM
-    func handleViewModelActions(action:  HomePageOutputResult) {
+    func handleViewModelActions(action: HomePageOutputResult) {
         switch action {
         case .loadingState(let state):
             print("setLoading to state: \(state)")
@@ -60,13 +90,76 @@ class HomePageVC: BasePageVC {
             } else {
                 self.hideLoading()
             }
-            break
+            
         case .didFinish(let result):
             print("handle result: \(result)")
-            break
-
+            
         case .didFailed(error: let error):
             print("show popup error: \(error.localizedCapitalized)")
         }
     }
+}
+
+/*
+ This extension to handle the page's clicks
+ */
+extension HomePageVC {
+    @objc func onClickAddCity(_ tap: UITapGestureRecognizer) {
+        // todo: show SearchVC to select a new city from APi
+        print("add new city")
+    }
+}
+
+/*
+ This extension is to handle the TextField's changes
+ */
+extension HomePageVC: UITextFieldDelegate {
+    
+    /*
+     This function will add a button Done to close keyboard
+     */
+    func addDoneButtonExitKeyboard() {
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        mTxtSearchCity.inputAccessoryView = doneToolbar
+    }
+    
+    /*
+     This function will hide keyboard
+     */
+    @objc func doneButtonAction() {
+        mTxtSearchCity.resignFirstResponder()
+    }
+    
+    /*
+     This function is used to handle textChanging
+     */
+    @IBAction func textFieldEditingDidChange(_ sender: Any) {
+        if let textField = sender as? UITextField {
+            let value = textField.text ?? ""
+            timer?.invalidate()
+            self.searchValue = value
+            timer = Timer.scheduledTimer(timeInterval: 0.5,
+                                         target: self,
+                                         selector: #selector(searchForKeyDelayed),
+                                         userInfo: nil,
+                                         repeats: false)
+        }
+    }
+    
+    /*
+     This function will be executed after delay (0.5 seconds) of the last character written
+     */
+    @objc func searchForKeyDelayed() {
+        print("search for city: \(self.searchValue)")
+    }
+    
 }
