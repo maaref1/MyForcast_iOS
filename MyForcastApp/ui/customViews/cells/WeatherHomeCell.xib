@@ -21,17 +21,17 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C94-7G-fOH">
                         <rect key="frame" x="2" y="2" width="454" height="142"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-z7-zhm">
-                                <rect key="frame" x="389" y="10.5" width="50" height="44"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-z7-zhm">
+                                <rect key="frame" x="389" y="10" width="50" height="45"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="WDK-eE-WS0"/>
                                     <constraint firstAttribute="width" constant="50" id="qBl-gm-Qgj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsT-a1-ovw">
-                                <rect key="frame" x="389" y="106.5" width="50" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 km/h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsT-a1-ovw">
+                                <rect key="frame" x="353.5" y="110" width="50.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -73,15 +73,25 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="soA-12-9jd" secondAttribute="trailing" id="epC-9A-Ser"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-fU-QOL">
+                                <rect key="frame" x="404" y="109" width="35" height="19.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="80G-3W-WdH"/>
+                                    <constraint firstAttribute="width" constant="35" id="yus-3V-Bh4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="BFG-Fd-vdX" secondAttribute="bottom" constant="10" id="9Ea-ub-q43"/>
                             <constraint firstItem="GsT-a1-ovw" firstAttribute="centerX" secondItem="hTb-z7-zhm" secondAttribute="centerX" priority="750" id="HuZ-9t-et6"/>
+                            <constraint firstItem="7DS-fU-QOL" firstAttribute="centerY" secondItem="GsT-a1-ovw" secondAttribute="centerY" id="NX2-9u-gZF"/>
+                            <constraint firstAttribute="trailing" secondItem="7DS-fU-QOL" secondAttribute="trailing" constant="15" id="O7r-PL-s8T"/>
                             <constraint firstItem="hTb-z7-zhm" firstAttribute="top" secondItem="C94-7G-fOH" secondAttribute="top" constant="10" id="OtI-KC-aAO"/>
                             <constraint firstAttribute="trailing" secondItem="hTb-z7-zhm" secondAttribute="trailing" constant="15" id="PsS-wx-Z2H"/>
                             <constraint firstItem="BFG-Fd-vdX" firstAttribute="leading" secondItem="C94-7G-fOH" secondAttribute="leading" constant="15" id="Thr-KS-RIG"/>
-                            <constraint firstItem="GsT-a1-ovw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hTb-z7-zhm" secondAttribute="trailing" id="UFi-jv-4nv"/>
+                            <constraint firstItem="GsT-a1-ovw" firstAttribute="trailing" secondItem="7DS-fU-QOL" secondAttribute="leading" id="UN9-6t-crI"/>
                             <constraint firstItem="hTb-z7-zhm" firstAttribute="leading" secondItem="BFG-Fd-vdX" secondAttribute="trailing" constant="15" id="WYL-Hz-THu"/>
                             <constraint firstItem="BFG-Fd-vdX" firstAttribute="top" secondItem="C94-7G-fOH" secondAttribute="top" constant="10" id="l4T-nt-qYu"/>
                             <constraint firstAttribute="bottom" secondItem="GsT-a1-ovw" secondAttribute="bottom" constant="15" id="oab-tD-NY6"/>
@@ -114,7 +124,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="doc.circle" catalog="system" width="128" height="121"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

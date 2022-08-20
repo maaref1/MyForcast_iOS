@@ -7,12 +7,37 @@
 
 import Foundation
 
+typealias CompletionListWeather = (_ success: Bool,
+                                   _ model: WeatherResponse?,
+                                   _ error: String?) -> Void
+
 protocol HomePageRepository {
-    func getListWeather()
+    func callGetListWeathersLonLat(lon: String,
+                                   lat: String,
+                                   completion: @escaping(CompletionListWeather))
 }
 
 extension MyBaseRepository: HomePageRepository {
-    func getListWeather() {
-        print("call api for home")
+    
+    func callGetListWeathersLonLat(lon: String,
+                                   lat: String,
+                                   completion: @escaping(CompletionListWeather)) {
+        let params: [String: Any] = [
+            MyConstants.latKey: lat,
+            MyConstants.lonKey: lon,
+            MyConstants.unitsKey: "metric",
+            MyConstants.apiIdKey: MyConstants.apiWeatherId
+        ]
+        let headers: [String: String] = [:]
+        self.apiRequest(path: MyConstants.getListWeathersPath,
+                        method: .get,
+                        params: params,
+                        headers: headers,
+                        responseType: WeatherResponse.self) { res, error in
+            guard res != nil else {
+                return
+            }
+            completion(true, res, error)
+        }
     }
 }

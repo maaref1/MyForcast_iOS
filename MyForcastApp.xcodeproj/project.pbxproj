@@ -33,6 +33,7 @@
 		FA21569B28B00E1E007D7476 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21569A28B00E1E007D7476 /* WeatherResponse.swift */; };
 		FA21569E28B00E71007D7476 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21569D28B00E71007D7476 /* UIView+extension.swift */; };
 		FA2156A028B01032007D7476 /* MyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21569F28B01032007D7476 /* MyConstants.swift */; };
+		FA2156A328B0224E007D7476 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156A228B0224E007D7476 /* CityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		FA21569A28B00E1E007D7476 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		FA21569D28B00E71007D7476 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		FA21569F28B01032007D7476 /* MyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConstants.swift; sourceTree = "<group>"; };
+		FA2156A228B0224E007D7476 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		FBED8773B9575CDAE19FE71D /* Pods-MyForcastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyForcastApp.release.xcconfig"; path = "Target Support Files/Pods-MyForcastApp/Pods-MyForcastApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 		FA10A9FD28AEB2CE003A6FF1 /* local */ = {
 			isa = PBXGroup;
 			children = (
+				FA2156A128B02234007D7476 /* models */,
 			);
 			path = local;
 			sourceTree = "<group>";
@@ -309,6 +312,14 @@
 				FA21569D28B00E71007D7476 /* UIView+extension.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		FA2156A128B02234007D7476 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FA2156A228B0224E007D7476 /* CityModel.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +525,7 @@
 				FA10A9ED28AEB05A003A6FF1 /* HomePageVM.swift in Sources */,
 				FA10AA0228AEB5F9003A6FF1 /* BasePageVC.swift in Sources */,
 				FA10A9B328AEAB84003A6FF1 /* AppDelegate.swift in Sources */,
+				FA2156A328B0224E007D7476 /* CityModel.swift in Sources */,
 				FA10A9EE28AEB05A003A6FF1 /* HomePageModel.swift in Sources */,
 				FA10AA0728B002E7003A6FF1 /* MyHomeTableViewManager.swift in Sources */,
 				FA10A9EF28AEB05A003A6FF1 /* HomePageVC.swift in Sources */,

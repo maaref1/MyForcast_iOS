@@ -10,29 +10,29 @@ import UIKit
 
 protocol MyHomeTableManagerProtocol: UITableViewDataSource,
                                      UITableViewDelegate {
-    func setListData(list: [Any])
 }
 
 class MyHomeTableManager: NSObject,
                           MyHomeTableManagerProtocol {
     
-    var listItems: [Any] = []
+    var viewModel: HomePageVM
     
-    func setListData(list: [Any]) {
-        self.listItems = list
+    init(viewModel: HomePageVM) {
+        self.viewModel = viewModel
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = self.listItems.count
+        let count = self.viewModel.getCountListFiltred()
         return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let mCell = tableView.dequeueReusableCell(withIdentifier: WeatherHomeCell.nibName,
+        guard let model = self.viewModel.getItemsByIndex(index: indexPath.row),
+              let mCell = tableView.dequeueReusableCell(withIdentifier: WeatherHomeCell.nibName,
                                                         for: indexPath) as? WeatherHomeCell else {
             return UITableViewCell()
         }
-        // mCell.initView(model: <#T##WeatherResponse#>)
+        mCell.initView(model: model)
         return mCell
     }
     

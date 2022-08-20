@@ -13,5 +13,11 @@ class MyConstants {
     
     static let baseUrl              = "https://api.openweathermap.org/"
     static let pathImgIcon          = "https://openweathermap.org/img/wn/**_**@2x.png"
+    static let getListWeathersPath  = baseUrl + "data/2.5/onecall"
+    
+    static let latKey               = "lat"
+    static let lonKey               = "lon"
+    static let apiIdKey             = "appid"
+    static let unitsKey             = "units"
     
 }

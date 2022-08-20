@@ -17,7 +17,7 @@ class HomePageVC: BasePageVC {
     
     // tableManager is used to handle all the tableView's actions
     lazy var tableManager: MyHomeTableManagerProtocol = {
-        return MyHomeTableManager()
+        return MyHomeTableManager(viewModel: self.viewModel)
     }()
     
     // Timer used to wait for user to end editing to search the city
@@ -29,6 +29,9 @@ class HomePageVC: BasePageVC {
         super.viewDidLoad()
         self.initOutputObservable()
         self.initSubViews()
+        
+        print("will init data list")
+        self.viewModel.inputAction.onNext(HomePageInputAction.loadListCities)
     }
     
     // This function will be used to init actions of views with code
@@ -45,7 +48,7 @@ class HomePageVC: BasePageVC {
         self.mTableView.register(WeatherHomeCell.nib(),
                                  forCellReuseIdentifier: WeatherHomeCell.nibName)
         
-        self.tableManager.setListData(list: [1, 2, 3, 4, 5])
+        // self.tableManager.setListData(list: [1, 2, 3, 4, 5])
         self.mTableView.reloadData()
     }
     
@@ -93,6 +96,9 @@ class HomePageVC: BasePageVC {
             
         case .didFinish(let result):
             print("handle result: \(result)")
+            DispatchQueue.main.async {
+                self.mTableView.reloadData()
+            }
             
         case .didFailed(error: let error):
             print("show popup error: \(error.localizedCapitalized)")
@@ -160,6 +166,7 @@ extension HomePageVC: UITextFieldDelegate {
      */
     @objc func searchForKeyDelayed() {
         print("search for city: \(self.searchValue)")
+        self.viewModel.inputAction.onNext(HomePageInputAction.searchForCity(name: self.searchValue))
     }
     
 }

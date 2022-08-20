@@ -7,12 +7,15 @@ import Foundation
 
 // This struct to save HomePage's variables
 struct HomePageModel {
-    
+    var listCities: [CityModel] = []
+    var fullListForcast: [WeatherResponse] = []
+    var filtredList: [WeatherResponse] = []
 }
 
 // This enum presents the actions used on View to command the ViewModel
 enum HomePageInputAction {
-    case performAction(input: HomePageInputModel)
+    case loadListCities
+    case searchForCity(name: String)
 }
 
 // This enum presents the actions used to communicate the ViewModel's data to View
