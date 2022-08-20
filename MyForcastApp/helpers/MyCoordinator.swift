@@ -22,10 +22,10 @@ struct MYCoordinator {
         
         self.vcGenerator = MyVCGenerator(api: api)
         self.window = window
-        if let vc = vcGenerator.generateVC(typeVc: typeVC, coordinator: self) as? HomePageVC {
-            vc.myCoordinator = self
-            self.currentPresentedVC = vc
-            self.window.rootViewController = vc
+        if let vcPage = vcGenerator.generateVC(typeVc: typeVC, coordinator: self) as? HomePageVC {
+            vcPage.myCoordinator = self
+            self.currentPresentedVC = vcPage
+            self.window.rootViewController = vcPage
         }
     }
     
@@ -33,11 +33,11 @@ struct MYCoordinator {
      This function to redirect to HomePage
      */
     func redirectoToHome() {
-        guard let vc = vcGenerator.generateVC(typeVc: .homeVC, coordinator: self) as? HomePageVC else {
+        guard let vcPage = vcGenerator.generateVC(typeVc: .homeVC, coordinator: self) as? HomePageVC else {
             return
         }
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .coverVertical
-        self.currentPresentedVC?.present(vc, animated: false)
+        vcPage.modalPresentationStyle = .fullScreen
+        vcPage.modalTransitionStyle = .coverVertical
+        self.currentPresentedVC?.present(vcPage, animated: false)
     }
 }

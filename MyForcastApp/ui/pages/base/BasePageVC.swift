@@ -24,4 +24,3 @@ class BasePageVC: UIViewController {
         return self
     }
 }
-
