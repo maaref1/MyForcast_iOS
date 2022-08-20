@@ -101,6 +101,9 @@ class HomePageVC: BasePageVC {
                 self.mTableView.reloadData()
             }
             
+        case .didSelectWeatherItem(let model):
+            self.myCoordinator?.redirectoToDetails(model: model)
+            
         case .didFailed(error: let error):
             print("show popup error: \(error.localizedCapitalized)")
         }

@@ -16,6 +16,7 @@ struct HomePageModel {
 enum HomePageInputAction {
     case loadListCities
     case searchForCity(name: String)
+    case didSelectWeatherItem(model: WeatherResponse)
 }
 
 // This enum presents the actions used to communicate the ViewModel's data to View
@@ -23,6 +24,7 @@ enum HomePageOutputResult {
     case didFinish(result: Any)
     case didFailed(error: String)
     case loadingState(state: Bool)
+    case didSelectWeatherItem(result: WeatherResponse)
 }
 
 // This struct used to store data to pass from View to ViewModel as Input

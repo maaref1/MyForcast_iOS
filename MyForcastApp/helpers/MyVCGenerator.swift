@@ -32,7 +32,7 @@ class MyVCGenerator: VCGeneratorProtocol {
             let mService = HomePageService(api: self.api)
             let model = HomePageModel()
             let mViewModel = HomePageVM(mService: mService,
-                                         model: model)
+                                        model: model)
             let pageVc = HomePageVC()
             pageVc.myCoordinator = coordinator
             pageVc.viewModel = mViewModel
@@ -46,7 +46,17 @@ class MyVCGenerator: VCGeneratorProtocol {
             let pageVc = SearchPageVC()
             pageVc.myCoordinator = coordinator
             pageVc.viewModel = mViewModel
-            return pageVc   
+            return pageVc
+        case .detailsVC:
+            
+            let mService = DetailsPageService(api: self.api)
+            let model = DetailsPageModel()
+            let mViewModel = DetailsPageVM(mService: mService,
+                                           model: model)
+            let pageVc = DetailsPageVC()
+            pageVc.myCoordinator = coordinator
+            pageVc.viewModel = mViewModel
+            return pageVc
         }
     }
 }
@@ -54,4 +64,5 @@ class MyVCGenerator: VCGeneratorProtocol {
 enum PageVCType {
     case homeVC
     case searchVC
+    case detailsVC
 }

@@ -32,6 +32,7 @@ class MyHomeTableManager: NSObject,
                                                         for: indexPath) as? WeatherHomeCell else {
             return UITableViewCell()
         }
+        mCell.delegate = self
         mCell.initView(model: model)
         return mCell
     }
@@ -50,5 +51,15 @@ class MyHomeTableManager: NSObject,
         default:
             break
         }
+    }
+}
+
+extension MyHomeTableManager: WeatherItemCellDelegate {
+    func onClickItemCell(model: WeatherResponse?) {
+        guard model != nil else {
+            return
+        }
+        print("item selected: \(model?.cityName ?? "")")
+        self.viewModel.inputAction.onNext(.didSelectWeatherItem(model: model!))
     }
 }

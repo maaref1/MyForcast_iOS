@@ -40,7 +40,8 @@ struct MYCoordinator {
      This function to redirect to HomePage
      */
     mutating func redirectoToHome() {
-        guard let vcPage = vcGenerator.generateVC(typeVc: .homeVC, coordinator: self) as? HomePageVC else {
+        guard let vcPage = vcGenerator.generateVC(typeVc: .homeVC,
+                                                  coordinator: self) as? HomePageVC else {
             return
         }
         vcPage.modalPresentationStyle = .fullScreen
@@ -50,10 +51,26 @@ struct MYCoordinator {
     }
     
     /*
+     This function to redirect to DetailsPage
+     */
+    mutating func redirectoToDetails(model: WeatherResponse) {
+        guard let vcPage = vcGenerator.generateVC(typeVc: .detailsVC,
+                                                  coordinator: self) as? DetailsPageVC else {
+            return
+        }
+        vcPage.modalPresentationStyle = .fullScreen
+        vcPage.modalTransitionStyle = .coverVertical
+        vcPage.model = model
+        self.currentPresentedVC?.present(vcPage, animated: false)
+        self.currentPresentedVC = vcPage
+    }
+    
+    /*
      This function to popup SearchPageVC
      */
     mutating func showSearchPageVCPopup(delegate: SearchCityVCDelegate) {
-        guard let vcPage = vcGenerator.generateVC(typeVc: .searchVC, coordinator: self) as? SearchPageVC else {
+        guard let vcPage = vcGenerator.generateVC(typeVc: .searchVC,
+                                                  coordinator: self) as? SearchPageVC else {
             return
         }
         vcPage.modalPresentationStyle = .fullScreen

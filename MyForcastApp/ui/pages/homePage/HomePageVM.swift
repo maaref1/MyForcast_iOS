@@ -38,6 +38,8 @@ class HomePageVM {
                 self.mService.loadWeatherForCities(cities: self.model.listCities)
             case .searchForCity(let name):
                 self.filterListByCityName(name: name)
+            case .didSelectWeatherItem(let model):
+                self.outputAction.onNext(.didSelectWeatherItem(result: model))
             }
         } onError: { _ in
             print("on error")

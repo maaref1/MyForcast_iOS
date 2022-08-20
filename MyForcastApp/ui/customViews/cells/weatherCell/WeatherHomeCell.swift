@@ -43,7 +43,7 @@ class WeatherHomeCell: UITableViewCell {
             }
         }
         let windSpeed = model.current?.windSpeed ?? 0
-        self.lbTimeView.text = "\(windSpeed) Km/h"
+        self.lbTimeView.text = "\(windSpeed) mph"
         
         self.contentView.setOnClickListener(target: self, action: #selector(onClickCell))
     }
