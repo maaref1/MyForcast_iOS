@@ -8,7 +8,7 @@ import RxSwift
 
 protocol HomePageServiceProtocol {
     func noneService()
-    func loadWeatherForCities(cities: [CityModel])
+    func loadWeatherForCities(cities: [ResultCity])
 }
 
 class HomePageService: HomePageServiceProtocol {
@@ -26,21 +26,34 @@ class HomePageService: HomePageServiceProtocol {
         self.serviceOutput.onNext(HomePageOutputResult.didFinish(result: true))
     }
     
-    func loadWeatherForCities(cities: [CityModel]) {
+    func loadWeatherForCities(cities: [ResultCity]) {
+        self.sendSavedListIfExists(cities: cities)
         var listWeather: [WeatherResponse] = []
         cities.forEach { cityModel in
             self.apiClient.callGetListWeathersLonLat(lon: "\(cityModel.lon)",
                                                      lat: "\(cityModel.lat)") { _, model, _ in
                 var model = model
                 model?.cityName = cityModel.name
-                model?.districtName = cityModel.subName
+                model?.districtName = cityModel.state
                 
                 listWeather.append(model ?? .init(lat: -1))
                 if listWeather.count == cities.count {
                     listWeather = listWeather.filter({$0.lat != -1})
+                    CoreDataManager.shared.setWeatherList(list: listWeather)
+                    listWeather = listWeather.sorted(by: {$0.cityName < $1.cityName})
                     self.serviceOutput.onNext(HomePageOutputResult.didFinish(result: listWeather))
                 }
             }
         }
+    }
+    
+    func sendSavedListIfExists(cities: [ResultCity]) {
+        var listWeather: [WeatherResponse] = []
+        listWeather = CoreDataManager.shared.getListWeathers()
+        guard listWeather.count == cities.count else {
+            return
+        }
+        listWeather = listWeather.sorted(by: {$0.cityName < $1.cityName})
+        self.serviceOutput.onNext(HomePageOutputResult.didFinish(result: listWeather))
     }
 }

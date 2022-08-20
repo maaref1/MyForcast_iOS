@@ -67,6 +67,7 @@ class SearchPageVM {
     
     func saveCityAndRedirect(city: ResultCity) {
         print("did select city to add : \(city)")
+        CoreDataManager.shared.addCityToLocalList(city: city)
         self.outputAction.onNext(.didCitySelected(model: city))
     }
 }

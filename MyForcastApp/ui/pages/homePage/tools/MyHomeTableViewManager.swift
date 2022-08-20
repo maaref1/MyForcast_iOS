@@ -47,7 +47,7 @@ class MyHomeTableManager: NSObject,
                    forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-            print("delete this item at index: \(indexPath.row)")
+            self.viewModel.inputAction.onNext(.deleteItemAt(index: indexPath.row))
         default:
             break
         }

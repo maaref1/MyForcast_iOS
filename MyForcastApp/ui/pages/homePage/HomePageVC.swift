@@ -8,7 +8,7 @@ import RxSwift
 
 class HomePageVC: BasePageVC {
     
-    @IBOutlet weak var mBtnAddCity: UIView!
+    @IBOutlet weak var mBtnAddCity: UIImageView!
     @IBOutlet weak var mTxtSearchCity: UITextField!
     @IBOutlet weak var mTableView: UITableView!
     
@@ -104,6 +104,9 @@ class HomePageVC: BasePageVC {
         case .didSelectWeatherItem(let model):
             self.myCoordinator?.redirectoToDetails(model: model)
             
+        case .didDeleteItemWeather:
+            self.viewModel.inputAction.onNext(.loadListCities)
+            
         case .didFailed(error: let error):
             print("show popup error: \(error.localizedCapitalized)")
         }
@@ -178,9 +181,10 @@ extension HomePageVC: UITextFieldDelegate {
 extension HomePageVC: SearchCityVCDelegate {
     func onSelectItemCity(city: ResultCity?) {
         print("new city added, reload table")
-        DispatchQueue.main.async {
-            self.mTableView.reloadData()
-        }
         self.myCoordinator?.setCurrentlyPresentedVC(vcPage: self)
+        guard city != nil else {
+            return
+        }
+        self.viewModel.inputAction.onNext(.loadListCities)
     }
 }

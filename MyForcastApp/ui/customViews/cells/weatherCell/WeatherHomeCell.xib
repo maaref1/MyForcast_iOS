@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -82,7 +81,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="BFG-Fd-vdX" secondAttribute="bottom" constant="10" id="9Ea-ub-q43"/>
                             <constraint firstItem="GsT-a1-ovw" firstAttribute="centerX" secondItem="hTb-z7-zhm" secondAttribute="centerX" priority="750" id="HuZ-9t-et6"/>
@@ -125,8 +124,5 @@
     </objects>
     <resources>
         <image name="paperplane" catalog="system" width="128" height="118"/>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageVC" customModule="MyForcastApp" customModuleProvider="target">
             <connections>
-                <outlet property="mBtnAddCity" destination="L32-cb-K4H" id="snv-Xh-QNX"/>
+                <outlet property="mBtnAddCity" destination="kPm-l5-u35" id="DbZ-Nt-ih0"/>
                 <outlet property="mTableView" destination="oeB-Rv-xNu" id="YRF-cW-ad0"/>
                 <outlet property="mTxtSearchCity" destination="zMG-dh-gaX" id="kj7-Uj-ZEz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMG-dh-gaX">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City name.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMG-dh-gaX">
                     <rect key="frame" x="15" y="59" width="384" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="6CW-Xs-h9H"/>
@@ -30,59 +30,50 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czj-8s-oWi">
+                    <rect key="frame" x="15" y="100" width="384" height="1"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ZnE-5M-Lbj"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oeB-Rv-xNu">
                     <rect key="frame" x="15" y="114" width="384" height="748"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L32-cb-K4H">
-                    <rect key="frame" x="355" y="803" width="44" height="44"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add City" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dU1-NL-kcO">
-                            <rect key="frame" x="0.0" y="7.5" width="44" height="29"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemMintColor"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_btn" translatesAutoresizingMaskIntoConstraints="NO" id="kPm-l5-u35">
+                    <rect key="frame" x="354" y="802" width="45" height="45"/>
                     <constraints>
-                        <constraint firstItem="dU1-NL-kcO" firstAttribute="centerY" secondItem="L32-cb-K4H" secondAttribute="centerY" id="Gvu-in-Gx6"/>
-                        <constraint firstItem="dU1-NL-kcO" firstAttribute="leading" secondItem="L32-cb-K4H" secondAttribute="leading" id="ivL-XO-GLX"/>
-                        <constraint firstAttribute="height" constant="44" id="nCI-Nf-vHd"/>
-                        <constraint firstAttribute="width" constant="44" id="t8T-b7-Qh8"/>
-                        <constraint firstAttribute="trailing" secondItem="dU1-NL-kcO" secondAttribute="trailing" id="xVb-Hd-E2T"/>
+                        <constraint firstAttribute="height" constant="45" id="G7V-Tv-fTf"/>
+                        <constraint firstAttribute="width" constant="45" id="dzq-qa-fqO"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="22"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zMG-dh-gaX" secondAttribute="trailing" constant="15" id="28N-9h-VXL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L32-cb-K4H" secondAttribute="trailing" constant="15" id="FsS-io-2pg"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="L32-cb-K4H" secondAttribute="bottom" constant="15" id="KcC-yA-UI6"/>
+                <constraint firstItem="czj-8s-oWi" firstAttribute="leading" secondItem="zMG-dh-gaX" secondAttribute="leading" id="2eF-sX-QRY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kPm-l5-u35" secondAttribute="bottom" constant="15" id="DlX-s9-UPG"/>
+                <constraint firstItem="czj-8s-oWi" firstAttribute="trailing" secondItem="zMG-dh-gaX" secondAttribute="trailing" id="LVb-Ys-ZyR"/>
                 <constraint firstItem="oeB-Rv-xNu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Q06-iy-yIr"/>
                 <constraint firstItem="oeB-Rv-xNu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="WwC-Db-Bsy"/>
                 <constraint firstItem="zMG-dh-gaX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="dDQ-g8-1dj"/>
                 <constraint firstItem="oeB-Rv-xNu" firstAttribute="trailing" secondItem="zMG-dh-gaX" secondAttribute="trailing" id="fMo-CJ-PcZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oeB-Rv-xNu" secondAttribute="trailing" constant="15" id="nxr-db-GOZ"/>
                 <constraint firstItem="oeB-Rv-xNu" firstAttribute="top" secondItem="zMG-dh-gaX" secondAttribute="bottom" constant="15" id="raa-SU-6VF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kPm-l5-u35" secondAttribute="trailing" constant="15" id="sfS-4k-T5F"/>
                 <constraint firstItem="oeB-Rv-xNu" firstAttribute="leading" secondItem="zMG-dh-gaX" secondAttribute="leading" id="vTs-8u-Uiq"/>
                 <constraint firstItem="zMG-dh-gaX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="x30-xu-LyO"/>
+                <constraint firstItem="czj-8s-oWi" firstAttribute="top" secondItem="zMG-dh-gaX" secondAttribute="bottom" constant="1" id="xHU-Mc-ubS"/>
             </constraints>
             <point key="canvasLocation" x="139" y="94"/>
         </view>
     </objects>
     <resources>
+        <image name="add_btn" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
