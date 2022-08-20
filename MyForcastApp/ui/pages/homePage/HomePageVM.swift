@@ -36,10 +36,16 @@ class HomePageVM {
             case .loadListCities:
                 self.loadListCitiesFromLocalDB()
                 self.mService.loadWeatherForCities(cities: self.model.listCities)
+                
             case .searchForCity(let name):
                 self.filterListByCityName(name: name)
+                
             case .didSelectWeatherItem(let model):
                 self.outputAction.onNext(.didSelectWeatherItem(result: model))
+                
+            case .deleteItemAt(let index):
+                self.removeItemAtIndex(index: index)
+                
             }
         } onError: { _ in
             print("on error")
@@ -115,27 +121,17 @@ extension HomePageVM {
  This extension to manage cities add, edit, remove from localDB
  */
 extension HomePageVM {
+    func removeItemAtIndex(index: Int) {
+        guard let item = self.getItemsByIndex(index: index) else {
+            return
+        }
+        CoreDataManager.shared.removeCityFromLocalList(name: item.cityName)
+        self.outputAction.onNext(.didDeleteItemWeather)
+    }
     
     func loadListCitiesFromLocalDB() {
         self.model.listCities = []
-        self.model.listCities.append(.init(name: "Paris",
-                                               subName: "France",
-                                               lon: 48.817942,
-                                               lat: 2.386144))
-
-        self.model.listCities.append(.init(name: "Lyon",
-                                               subName: "France",
-                                               lon: 45.760539,
-                                               lat: 4.841314))
-        
-        self.model.listCities.append(.init(name: "Brussels",
-                                               subName: "Belgium",
-                                               lon: 50.810929,
-                                               lat: 4.397691))
-        
-        self.model.listCities.append(.init(name: "Toulouse",
-                                               subName: "France",
-                                               lon: 43.604323,
-                                               lat: 1.415103))
+        let listLocal = CoreDataManager.shared.getListCities()
+        self.model.listCities = listLocal
     }
 }

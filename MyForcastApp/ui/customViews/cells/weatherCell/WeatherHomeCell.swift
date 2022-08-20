@@ -36,10 +36,10 @@ class WeatherHomeCell: UITableViewCell {
         self.lbTempView.text = "\(self.model?.current?.temp ?? 0)° C"
         
         if let firstWeather = self.model?.current?.weather.first {
-            let imgPath = MyConstants.pathImgIcon.replacingOccurrences(of: "**_**", with: firstWeather.icon)
+            let imgPath = MyConstants.pathImgIcon.replacingOccurrences(of: "**_**", with: firstWeather.icon ?? "")
             self.imgIconWeather.sd_setImage(with: URL(string: imgPath),
                                             placeholderImage: UIImage(named: ""),
-                                            options: .waitStoreCache) {  _, _, _, _ in
+                                            options: .continueInBackground) {  _, _, _, _ in
             }
         }
         let windSpeed = model.current?.windSpeed ?? 0

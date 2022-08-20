@@ -18,6 +18,8 @@ class DetailsPageVC: BasePageVC {
     @IBOutlet weak var lbPressureView: UILabel!
     @IBOutlet weak var lbCloudView: UILabel!
     
+    @IBOutlet weak var imgBackBtn: UIImageView!
+    
     var viewModel: DetailsPageVM!
     var disposeBag = DisposeBag()
     
@@ -27,10 +29,21 @@ class DetailsPageVC: BasePageVC {
         super.viewDidLoad()
         self.initOutputObservable()
         self.initSubViews()
-        
+    }
+    
+    func initSubViews() {
+        self.initTapButtons()
+        self.initTextFieldsChanged()
         self.initView(model: self.model)
     }
-
+    
+    func initTextFieldsChanged() {
+    }
+    
+    func initTapButtons() {
+        self.imgBackBtn.setOnClickListener(target: self, action: #selector(onBackButtonClick))
+    }
+    
     func initView(model: WeatherResponse?) {
         guard let model = model,
               let cityWeather = model.current else {
@@ -39,10 +52,10 @@ class DetailsPageVC: BasePageVC {
         self.model = model
         self.lbCityName.text = self.model?.cityName ?? ""
         self.lbDistrictName.text = self.model?.districtName ?? ""
-        self.lbTempView.text = "\(cityWeather.temp)° C"
+        self.lbTempView.text = "\(cityWeather.temp ?? 0)° C"
         
         if let firstWeather = cityWeather.weather.first {
-            let imgPath = MyConstants.pathImgIcon.replacingOccurrences(of: "**_**", with: firstWeather.icon)
+            let imgPath = MyConstants.pathImgIcon.replacingOccurrences(of: "**_**", with: firstWeather.icon ?? "")
             self.imgIconWeather.sd_setImage(with: URL(string: imgPath),
                                             placeholderImage: UIImage(named: ""),
                                             options: .waitStoreCache) {  _, _, _, _ in
@@ -51,23 +64,12 @@ class DetailsPageVC: BasePageVC {
         let windSpeed = model.current?.windSpeed ?? 0
         
         self.lbWindView.text = "\(windSpeed) mph"
-        self.lbHumidityView.text = "\(cityWeather.humidity) %"
-        self.lbPressureView.text = "\(cityWeather.pressure) mb"
-        self.lbCloudView.text = "\(cityWeather.clouds) %"
+        self.lbHumidityView.text = "\(cityWeather.humidity ?? 0) %"
+        self.lbPressureView.text = "\(cityWeather.pressure ?? 0) mb"
+        self.lbCloudView.text = "\(cityWeather.clouds ?? 0) %"
     }
     
-    func initSubViews() {
-        self.initTapButtons()
-        self.initTextFieldsChanged()
-    }
-    
-    func initTextFieldsChanged() {
-    }
-    
-    func initTapButtons() {
-    }
-    
-    @IBAction func onBackButtonClick(_ sender: UIButton) {
+    @objc func onBackButtonClick(_ tap: UITapGestureRecognizer) {
         self.myCoordinator?.dismissCurrentVC()
     }
     

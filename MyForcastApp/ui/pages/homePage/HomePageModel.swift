@@ -7,7 +7,7 @@ import Foundation
 
 // This struct to save HomePage's variables
 struct HomePageModel {
-    var listCities: [CityModel] = []
+    var listCities: [ResultCity] = []
     var fullListForcast: [WeatherResponse] = []
     var filtredList: [WeatherResponse] = []
 }
@@ -17,6 +17,7 @@ enum HomePageInputAction {
     case loadListCities
     case searchForCity(name: String)
     case didSelectWeatherItem(model: WeatherResponse)
+    case deleteItemAt(index: Int)
 }
 
 // This enum presents the actions used to communicate the ViewModel's data to View
@@ -25,6 +26,7 @@ enum HomePageOutputResult {
     case didFailed(error: String)
     case loadingState(state: Bool)
     case didSelectWeatherItem(result: WeatherResponse)
+    case didDeleteItemWeather
 }
 
 // This struct used to store data to pass from View to ViewModel as Input

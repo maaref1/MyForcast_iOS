@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEr-IJ-wje">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEr-IJ-wje">
                     <rect key="frame" x="15" y="59" width="384" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="tDR-cc-8X7"/>
@@ -29,6 +29,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="474-W2-i4H">
+                    <rect key="frame" x="15" y="100" width="384" height="1"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="FmL-8K-GfI"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yge-UJ-2Vs">
                     <rect key="frame" x="15" y="114" width="384" height="748"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -37,12 +44,15 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="474-W2-i4H" firstAttribute="trailing" secondItem="pEr-IJ-wje" secondAttribute="trailing" id="3du-fZ-sMc"/>
                 <constraint firstItem="pEr-IJ-wje" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="9y5-eo-T6V"/>
                 <constraint firstItem="Yge-UJ-2Vs" firstAttribute="leading" secondItem="pEr-IJ-wje" secondAttribute="leading" id="ARw-Jj-J6C"/>
                 <constraint firstItem="Yge-UJ-2Vs" firstAttribute="top" secondItem="pEr-IJ-wje" secondAttribute="bottom" constant="15" id="O7F-i3-bVE"/>
                 <constraint firstItem="Yge-UJ-2Vs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="TsP-uT-Byw"/>
                 <constraint firstItem="pEr-IJ-wje" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="a70-Ll-89k"/>
+                <constraint firstItem="474-W2-i4H" firstAttribute="leading" secondItem="pEr-IJ-wje" secondAttribute="leading" id="bcT-yI-3pn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yge-UJ-2Vs" secondAttribute="trailing" constant="15" id="hkE-w2-tKF"/>
+                <constraint firstItem="474-W2-i4H" firstAttribute="top" secondItem="pEr-IJ-wje" secondAttribute="bottom" constant="1" id="hpD-Wc-yE7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yge-UJ-2Vs" secondAttribute="bottom" id="rAY-Sh-5br"/>
                 <constraint firstItem="Yge-UJ-2Vs" firstAttribute="trailing" secondItem="pEr-IJ-wje" secondAttribute="trailing" id="rVY-kE-Kwe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pEr-IJ-wje" secondAttribute="trailing" constant="15" id="trg-4z-0mn"/>
