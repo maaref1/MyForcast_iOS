@@ -13,6 +13,7 @@ class HomePageVC: BasePageVC {
     @IBOutlet weak var mTableView: UITableView!
     
     var viewModel: HomePageVM!
+    
     var disposeBag = DisposeBag()
     
     // tableManager is used to handle all the tableView's actions
@@ -113,6 +114,7 @@ extension HomePageVC {
     @objc func onClickAddCity(_ tap: UITapGestureRecognizer) {
         // todo: show SearchVC to select a new city from APi
         print("add new city")
+        self.myCoordinator?.showSearchPageVCPopup(delegate: self)
     }
 }
 
@@ -168,5 +170,14 @@ extension HomePageVC: UITextFieldDelegate {
         print("search for city: \(self.searchValue)")
         self.viewModel.inputAction.onNext(HomePageInputAction.searchForCity(name: self.searchValue))
     }
-    
+}
+
+extension HomePageVC: SearchCityVCDelegate {
+    func onSelectItemCity(city: ResultCity?) {
+        print("new city added, reload table")
+        DispatchQueue.main.async {
+            self.mTableView.reloadData()
+        }
+        self.myCoordinator?.setCurrentlyPresentedVC(vcPage: self)
+    }
 }

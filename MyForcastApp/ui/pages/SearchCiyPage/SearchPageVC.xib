@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchPageVC" customModule="MyForcastApp" customModuleProvider="target">
+            <connections>
+                <outlet property="mTableView" destination="Yge-UJ-2Vs" id="b5w-Ak-5Xd"/>
+                <outlet property="mTextFieldSearch" destination="pEr-IJ-wje" id="heW-sq-TJh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEr-IJ-wje">
+                    <rect key="frame" x="15" y="59" width="384" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="tDR-cc-8X7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yge-UJ-2Vs">
+                    <rect key="frame" x="15" y="114" width="384" height="748"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="pEr-IJ-wje" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="9y5-eo-T6V"/>
+                <constraint firstItem="Yge-UJ-2Vs" firstAttribute="leading" secondItem="pEr-IJ-wje" secondAttribute="leading" id="ARw-Jj-J6C"/>
+                <constraint firstItem="Yge-UJ-2Vs" firstAttribute="top" secondItem="pEr-IJ-wje" secondAttribute="bottom" constant="15" id="O7F-i3-bVE"/>
+                <constraint firstItem="Yge-UJ-2Vs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="TsP-uT-Byw"/>
+                <constraint firstItem="pEr-IJ-wje" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="a70-Ll-89k"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yge-UJ-2Vs" secondAttribute="trailing" constant="15" id="hkE-w2-tKF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yge-UJ-2Vs" secondAttribute="bottom" id="rAY-Sh-5br"/>
+                <constraint firstItem="Yge-UJ-2Vs" firstAttribute="trailing" secondItem="pEr-IJ-wje" secondAttribute="trailing" id="rVY-kE-Kwe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pEr-IJ-wje" secondAttribute="trailing" constant="15" id="trg-4z-0mn"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="86"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

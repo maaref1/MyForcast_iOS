@@ -25,7 +25,7 @@
 		FA10A9F728AEB12A003A6FF1 /* MyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9F628AEB12A003A6FF1 /* MyCoordinator.swift */; };
 		FA10A9F928AEB16D003A6FF1 /* MyVCGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9F828AEB16D003A6FF1 /* MyVCGenerator.swift */; };
 		FA10A9FB28AEB1BC003A6FF1 /* MyBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9FA28AEB1BC003A6FF1 /* MyBaseRepository.swift */; };
-		FA10AA0028AEB2F5003A6FF1 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9FF28AEB2F5003A6FF1 /* HomeRepository.swift */; };
+		FA10AA0028AEB2F5003A6FF1 /* HomePageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10A9FF28AEB2F5003A6FF1 /* HomePageRepository.swift */; };
 		FA10AA0228AEB5F9003A6FF1 /* BasePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10AA0128AEB5F9003A6FF1 /* BasePageVC.swift */; };
 		FA10AA0728B002E7003A6FF1 /* MyHomeTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10AA0628B002E6003A6FF1 /* MyHomeTableViewManager.swift */; };
 		FA21569728B00C1A007D7476 /* WeatherHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21569528B00C1A007D7476 /* WeatherHomeCell.swift */; };
@@ -34,6 +34,16 @@
 		FA21569E28B00E71007D7476 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21569D28B00E71007D7476 /* UIView+extension.swift */; };
 		FA2156A028B01032007D7476 /* MyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21569F28B01032007D7476 /* MyConstants.swift */; };
 		FA2156A328B0224E007D7476 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156A228B0224E007D7476 /* CityModel.swift */; };
+		FA2156AB28B0FEFA007D7476 /* SearchPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156A728B0FEFA007D7476 /* SearchPageVM.swift */; };
+		FA2156AC28B0FEFA007D7476 /* SearchPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156A828B0FEFA007D7476 /* SearchPageModel.swift */; };
+		FA2156AD28B0FEFA007D7476 /* SearchPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156A928B0FEFA007D7476 /* SearchPageVC.swift */; };
+		FA2156AE28B0FEFA007D7476 /* SearchPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156AA28B0FEFA007D7476 /* SearchPageService.swift */; };
+		FA2156B228B100B2007D7476 /* SearchPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2156B028B100B2007D7476 /* SearchPageVC.xib */; };
+		FA2156B528B10253007D7476 /* MySearchTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156B428B10253007D7476 /* MySearchTableManager.swift */; };
+		FA2156B728B102F8007D7476 /* CityLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156B628B102F8007D7476 /* CityLocationResponse.swift */; };
+		FA2156BB28B10494007D7476 /* CityItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156B928B10494007D7476 /* CityItemCell.swift */; };
+		FA2156BC28B10494007D7476 /* CityItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2156BA28B10494007D7476 /* CityItemCell.xib */; };
+		FA2156BE28B10794007D7476 /* SearchPageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2156BD28B10794007D7476 /* SearchPageRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +87,7 @@
 		FA10A9F628AEB12A003A6FF1 /* MyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoordinator.swift; sourceTree = "<group>"; };
 		FA10A9F828AEB16D003A6FF1 /* MyVCGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVCGenerator.swift; sourceTree = "<group>"; };
 		FA10A9FA28AEB1BC003A6FF1 /* MyBaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBaseRepository.swift; sourceTree = "<group>"; };
-		FA10A9FF28AEB2F5003A6FF1 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		FA10A9FF28AEB2F5003A6FF1 /* HomePageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageRepository.swift; sourceTree = "<group>"; };
 		FA10AA0128AEB5F9003A6FF1 /* BasePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageVC.swift; sourceTree = "<group>"; };
 		FA10AA0628B002E6003A6FF1 /* MyHomeTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeTableViewManager.swift; sourceTree = "<group>"; };
 		FA21569528B00C1A007D7476 /* WeatherHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeCell.swift; sourceTree = "<group>"; };
@@ -86,6 +96,16 @@
 		FA21569D28B00E71007D7476 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		FA21569F28B01032007D7476 /* MyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyConstants.swift; sourceTree = "<group>"; };
 		FA2156A228B0224E007D7476 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		FA2156A728B0FEFA007D7476 /* SearchPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageVM.swift; sourceTree = "<group>"; };
+		FA2156A828B0FEFA007D7476 /* SearchPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageModel.swift; sourceTree = "<group>"; };
+		FA2156A928B0FEFA007D7476 /* SearchPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageVC.swift; sourceTree = "<group>"; };
+		FA2156AA28B0FEFA007D7476 /* SearchPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageService.swift; sourceTree = "<group>"; };
+		FA2156B028B100B2007D7476 /* SearchPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPageVC.xib; sourceTree = "<group>"; };
+		FA2156B428B10253007D7476 /* MySearchTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySearchTableManager.swift; sourceTree = "<group>"; };
+		FA2156B628B102F8007D7476 /* CityLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityLocationResponse.swift; sourceTree = "<group>"; };
+		FA2156B928B10494007D7476 /* CityItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityItemCell.swift; sourceTree = "<group>"; };
+		FA2156BA28B10494007D7476 /* CityItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityItemCell.xib; sourceTree = "<group>"; };
+		FA2156BD28B10794007D7476 /* SearchPageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageRepository.swift; sourceTree = "<group>"; };
 		FBED8773B9575CDAE19FE71D /* Pods-MyForcastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyForcastApp.release.xcconfig"; path = "Target Support Files/Pods-MyForcastApp/Pods-MyForcastApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +229,7 @@
 		FA10A9E728AEB02F003A6FF1 /* pages */ = {
 			isa = PBXGroup;
 			children = (
+				FA2156A628B0FED6007D7476 /* SearchCiyPage */,
 				FA10AA0428AEB64E003A6FF1 /* base */,
 				FA10AA0328AEB640003A6FF1 /* homePage */,
 			);
@@ -255,7 +276,8 @@
 		FA10A9FE28AEB2DD003A6FF1 /* repositories */ = {
 			isa = PBXGroup;
 			children = (
-				FA10A9FF28AEB2F5003A6FF1 /* HomeRepository.swift */,
+				FA10A9FF28AEB2F5003A6FF1 /* HomePageRepository.swift */,
+				FA2156BD28B10794007D7476 /* SearchPageRepository.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -292,8 +314,8 @@
 		FA21569228B00955007D7476 /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				FA21569528B00C1A007D7476 /* WeatherHomeCell.swift */,
-				FA21569628B00C1A007D7476 /* WeatherHomeCell.xib */,
+				FA2156BF28B14DDE007D7476 /* weatherCell */,
+				FA2156B828B10478007D7476 /* cityCell */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -302,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				FA21569A28B00E1E007D7476 /* WeatherResponse.swift */,
+				FA2156B628B102F8007D7476 /* CityLocationResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -320,6 +343,45 @@
 				FA2156A228B0224E007D7476 /* CityModel.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		FA2156A628B0FED6007D7476 /* SearchCiyPage */ = {
+			isa = PBXGroup;
+			children = (
+				FA2156B328B10242007D7476 /* tools */,
+				FA2156A728B0FEFA007D7476 /* SearchPageVM.swift */,
+				FA2156A828B0FEFA007D7476 /* SearchPageModel.swift */,
+				FA2156AA28B0FEFA007D7476 /* SearchPageService.swift */,
+				FA2156A928B0FEFA007D7476 /* SearchPageVC.swift */,
+				FA2156B028B100B2007D7476 /* SearchPageVC.xib */,
+			);
+			path = SearchCiyPage;
+			sourceTree = "<group>";
+		};
+		FA2156B328B10242007D7476 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				FA2156B428B10253007D7476 /* MySearchTableManager.swift */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		FA2156B828B10478007D7476 /* cityCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA2156B928B10494007D7476 /* CityItemCell.swift */,
+				FA2156BA28B10494007D7476 /* CityItemCell.xib */,
+			);
+			path = cityCell;
+			sourceTree = "<group>";
+		};
+		FA2156BF28B14DDE007D7476 /* weatherCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA21569528B00C1A007D7476 /* WeatherHomeCell.swift */,
+				FA21569628B00C1A007D7476 /* WeatherHomeCell.xib */,
+			);
+			path = weatherCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,7 +492,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA10A9C228AEAB8C003A6FF1 /* LaunchScreen.storyboard in Resources */,
+				FA2156B228B100B2007D7476 /* SearchPageVC.xib in Resources */,
 				FA10A9BF28AEAB8C003A6FF1 /* Assets.xcassets in Resources */,
+				FA2156BC28B10494007D7476 /* CityItemCell.xib in Resources */,
 				FA10A9F428AEB098003A6FF1 /* HomePageVC.xib in Resources */,
 				FA21569828B00C1A007D7476 /* WeatherHomeCell.xib in Resources */,
 				FA10A9BA28AEAB84003A6FF1 /* Main.storyboard in Resources */,
@@ -517,7 +581,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2156AC28B0FEFA007D7476 /* SearchPageModel.swift in Sources */,
 				FA10A9F728AEB12A003A6FF1 /* MyCoordinator.swift in Sources */,
+				FA2156AD28B0FEFA007D7476 /* SearchPageVC.swift in Sources */,
 				FA2156A028B01032007D7476 /* MyConstants.swift in Sources */,
 				FA21569B28B00E1E007D7476 /* WeatherResponse.swift in Sources */,
 				FA21569E28B00E71007D7476 /* UIView+extension.swift in Sources */,
@@ -527,14 +593,20 @@
 				FA10A9B328AEAB84003A6FF1 /* AppDelegate.swift in Sources */,
 				FA2156A328B0224E007D7476 /* CityModel.swift in Sources */,
 				FA10A9EE28AEB05A003A6FF1 /* HomePageModel.swift in Sources */,
+				FA2156AB28B0FEFA007D7476 /* SearchPageVM.swift in Sources */,
 				FA10AA0728B002E7003A6FF1 /* MyHomeTableViewManager.swift in Sources */,
 				FA10A9EF28AEB05A003A6FF1 /* HomePageVC.swift in Sources */,
 				FA21569728B00C1A007D7476 /* WeatherHomeCell.swift in Sources */,
 				FA10A9BD28AEAB84003A6FF1 /* MyForcastApp.xcdatamodeld in Sources */,
 				FA10A9B528AEAB84003A6FF1 /* SceneDelegate.swift in Sources */,
+				FA2156BE28B10794007D7476 /* SearchPageRepository.swift in Sources */,
+				FA2156BB28B10494007D7476 /* CityItemCell.swift in Sources */,
 				FA10A9FB28AEB1BC003A6FF1 /* MyBaseRepository.swift in Sources */,
+				FA2156B528B10253007D7476 /* MySearchTableManager.swift in Sources */,
 				FA10A9F028AEB05A003A6FF1 /* HomePageService.swift in Sources */,
-				FA10AA0028AEB2F5003A6FF1 /* HomeRepository.swift in Sources */,
+				FA2156AE28B0FEFA007D7476 /* SearchPageService.swift in Sources */,
+				FA2156B728B102F8007D7476 /* CityLocationResponse.swift in Sources */,
+				FA10AA0028AEB2F5003A6FF1 /* HomePageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

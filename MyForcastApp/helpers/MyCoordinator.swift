@@ -23,21 +23,46 @@ struct MYCoordinator {
         self.vcGenerator = MyVCGenerator(api: api)
         self.window = window
         if let vcPage = vcGenerator.generateVC(typeVc: typeVC, coordinator: self) as? HomePageVC {
-            vcPage.myCoordinator = self
             self.currentPresentedVC = vcPage
             self.window.rootViewController = vcPage
         }
     }
     
+    mutating func setCurrentlyPresentedVC(vcPage: UIViewController) {
+        self.currentPresentedVC = vcPage
+    }
+    
+    func dismissCurrentVC() {
+        self.currentPresentedVC?.dismiss(animated: true)
+    }
+    
     /*
      This function to redirect to HomePage
      */
-    func redirectoToHome() {
+    mutating func redirectoToHome() {
         guard let vcPage = vcGenerator.generateVC(typeVc: .homeVC, coordinator: self) as? HomePageVC else {
             return
         }
         vcPage.modalPresentationStyle = .fullScreen
         vcPage.modalTransitionStyle = .coverVertical
         self.currentPresentedVC?.present(vcPage, animated: false)
+        self.currentPresentedVC = vcPage
+    }
+    
+    /*
+     This function to popup SearchPageVC
+     */
+    mutating func showSearchPageVCPopup(delegate: SearchCityVCDelegate) {
+        guard let vcPage = vcGenerator.generateVC(typeVc: .searchVC, coordinator: self) as? SearchPageVC else {
+            return
+        }
+        vcPage.modalPresentationStyle = .fullScreen
+        vcPage.modalTransitionStyle = .coverVertical
+        
+        vcPage.modalTransitionStyle = .coverVertical
+        vcPage.modalPresentationStyle = .popover
+        vcPage.delegate = delegate
+        self.currentPresentedVC?.present(vcPage, animated: true)
+        self.currentPresentedVC = vcPage
     }
 }

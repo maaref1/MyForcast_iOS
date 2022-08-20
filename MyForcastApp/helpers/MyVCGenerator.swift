@@ -37,10 +37,21 @@ class MyVCGenerator: VCGeneratorProtocol {
             pageVc.myCoordinator = coordinator
             pageVc.viewModel = mViewModel
             return pageVc
+            
+        case .searchVC:
+            let mService = SearchPageService(api: self.api)
+            let model = SearchPageModel()
+            let mViewModel = SearchPageVM(mService: mService,
+                                          model: model)
+            let pageVc = SearchPageVC()
+            pageVc.myCoordinator = coordinator
+            pageVc.viewModel = mViewModel
+            return pageVc   
         }
     }
 }
 
 enum PageVCType {
     case homeVC
+    case searchVC
 }
