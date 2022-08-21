@@ -10,6 +10,7 @@ import UIKit
 
 protocol MySearchTableManagerProtocol: UITableViewDataSource,
                                      UITableViewDelegate {
+    func onClickCityItemCell(model: ResultCity?)
 }
 
 class MySearchTableManager: NSObject,
@@ -58,7 +59,7 @@ class MySearchTableManager: NSObject,
  This extension will handle the cell's actions
  */
 extension MySearchTableManager: CityItemCellDelegate {
-    func onClickItemCell(model: ResultCity?) {
+    func onClickCityItemCell(model: ResultCity?) {
         guard model != nil else {
             return
         }

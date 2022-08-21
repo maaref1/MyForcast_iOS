@@ -9,6 +9,7 @@ import RxSwift
 protocol HomePageServiceProtocol {
     func noneService()
     func loadWeatherForCities(cities: [ResultCity])
+    func performGetWeatherFromApi(cities: [ResultCity], completion: (() -> Void)?)
 }
 
 class HomePageService: HomePageServiceProtocol {
@@ -28,6 +29,14 @@ class HomePageService: HomePageServiceProtocol {
     
     func loadWeatherForCities(cities: [ResultCity]) {
         self.sendSavedListIfExists(cities: cities)
+        self.performGetWeatherFromApi(cities: cities)
+    }
+    
+    func performGetWeatherFromApi(cities: [ResultCity], completion: (() -> Void)? = nil) {
+        guard !cities.isEmpty else {
+            completion?()
+            return
+        }
         var listWeather: [WeatherResponse] = []
         cities.forEach { cityModel in
             self.apiClient.callGetListWeathersLonLat(lon: "\(cityModel.lon)",
@@ -42,6 +51,7 @@ class HomePageService: HomePageServiceProtocol {
                     CoreDataManager.shared.setWeatherList(list: listWeather)
                     listWeather = listWeather.sorted(by: {$0.cityName < $1.cityName})
                     self.serviceOutput.onNext(HomePageOutputResult.didFinish(result: listWeather))
+                    completion?()
                 }
             }
         }

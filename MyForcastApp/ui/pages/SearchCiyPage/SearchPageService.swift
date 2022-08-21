@@ -26,12 +26,18 @@ class SearchPageService: SearchPageServiceProtocol {
     }
     
     func searchForCityByName(value: String) {
+        self.performApiSearchCity(value: value)
+    }
+    
+    func performApiSearchCity(value: String, completion: (() -> Void)? = nil) {
         self.apiClient.searchListCitiesByName(value: value) { _, model, error in
             guard model != nil else {
                 self.serviceOutput.onNext(.didFailed(error: error ?? "Failed to respond"))
+                completion?()
                 return
             }
             self.serviceOutput.onNext(.didFinish(result: model!))
+            completion?()
         }
     }
 }

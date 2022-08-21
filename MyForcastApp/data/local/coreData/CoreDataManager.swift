@@ -72,12 +72,14 @@ extension CoreDataManager {
     }
     
     func addCityToLocalList(city: ResultCity) {
-        
+        guard let context = self.getContext() else {
+            return
+        }
         if let oldObj = self.getCityFromDb(name: city.name) {
             PersistenceService.context.delete(oldObj)
             PersistenceService.saveContext()
         }
-        let model = CDCityModel(context: PersistenceService.context)
+        let model = CDCityModel(context: context)
         model.name = city.name
         model.country = city.country
         model.state = city.state

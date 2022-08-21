@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CityItemCellDelegate: AnyObject {
-    func onClickItemCell(model: ResultCity?)
+    func onClickCityItemCell(model: ResultCity?)
 }
 
 class CityItemCell: UITableViewCell {
@@ -35,7 +35,7 @@ class CityItemCell: UITableViewCell {
     }
     
     @objc func onClickCell(_ tap: UITapGestureRecognizer) {
-        self.delegate?.onClickItemCell(model: self.model)
+        self.delegate?.onClickCityItemCell(model: self.model)
     }
     
     /*

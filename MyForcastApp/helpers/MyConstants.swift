@@ -25,4 +25,7 @@ class MyConstants {
     
     static let citySearchKey        = "q"
     static let limitSearchKey       = "limit"
+    
+    // Unit Tests Messages
+    static var msgInvalid           = "Test failed to succeed"
 }

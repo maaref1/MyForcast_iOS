@@ -27,9 +27,9 @@ class DetailsPageVM {
     func initInputObservable() {
         self.inputAction.subscribe { input in
             switch input {
-            case .performAction(let inputs):
+            case .performAction:
                 self.mService.noneService()
-                break
+
             }
         } onError: { _ in
         } onCompleted: {
@@ -46,7 +46,7 @@ class DetailsPageVM {
     
     func sendOutputResponse(result: DetailsServiceOutputResult, error: Error?) {
         switch result {
-        case .didFinish(let result):
+        case .didFinish:
             break
 
         default:

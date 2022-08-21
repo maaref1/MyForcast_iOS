@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension CDCityModel {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDCityModel> {
