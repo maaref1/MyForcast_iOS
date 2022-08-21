@@ -29,6 +29,9 @@ class WeatherHomeCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    /*
+     This function will fill weather's data to the cell's view
+     */
     func initView(model: WeatherResponse) {
         self.model = model
         self.lbCityName.text = self.model?.cityName ?? ""
@@ -48,6 +51,9 @@ class WeatherHomeCell: UITableViewCell {
         self.contentView.setOnClickListener(target: self, action: #selector(onClickCell))
     }
     
+    /*
+     This function will handle click on cell content
+     */
     @objc func onClickCell(_ tap: UITapGestureRecognizer) {
         self.delegate?.onClickItemCell(model: self.model)
     }

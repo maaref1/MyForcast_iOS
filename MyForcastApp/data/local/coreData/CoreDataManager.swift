@@ -44,6 +44,9 @@ class CoreDataManager: NSObject {
 }
 
 extension CoreDataManager {
+    /*
+     This function will get list cities saved on DB
+     */
     func getListCities() -> [ResultCity] {
         let fetchData: NSFetchRequest<CDCityModel> = CDCityModel.fetchRequest()
         do {
@@ -63,6 +66,9 @@ extension CoreDataManager {
         return []
     }
     
+    /*
+     This function will get single city by name from DB
+     */
     func getCityFromDb(name: String) -> CDCityModel? {
         let fetchData: NSFetchRequest<CDCityModel> = CDCityModel.fetchRequest()
         guard let obj = try? PersistenceService.context.fetch(fetchData) else {
@@ -71,6 +77,9 @@ extension CoreDataManager {
         return obj.filter({$0.name?.lowercased() == name.lowercased()}).first
     }
     
+    /*
+     This function will add new city to DB
+     */
     func addCityToLocalList(city: ResultCity) {
         guard let context = self.getContext() else {
             return
@@ -88,6 +97,9 @@ extension CoreDataManager {
         PersistenceService.saveContext()
     }
     
+    /*
+     This function will remove a city by name from the DB
+     */
     func removeCityFromLocalList(name: String) {
         if let oldObj = self.getCityFromDb(name: name) {
             PersistenceService.context.delete(oldObj)
@@ -97,6 +109,9 @@ extension CoreDataManager {
 }
 
 extension CoreDataManager {
+    /*
+     This function will get all list of weathers items saved on DB
+     */
     func getListWeathers() -> [WeatherResponse] {
         let fetchData: NSFetchRequest<CDWeatherModel> = CDWeatherModel.fetchRequest()
         do {
@@ -125,6 +140,9 @@ extension CoreDataManager {
         return []
     }
     
+    /*
+     This function will get weather by name from DB
+     */
     func getWeatherFromDb(name: String) -> CDWeatherModel? {
         let fetchData: NSFetchRequest<CDWeatherModel> = CDWeatherModel.fetchRequest()
         guard let obj = try? PersistenceService.context.fetch(fetchData) else {
@@ -133,6 +151,9 @@ extension CoreDataManager {
         return obj.filter({$0.name?.lowercased() == name.lowercased()}).first
     }
     
+    /*
+     This function will set new list of weathers to DB
+     */
     func setWeatherList(list: [WeatherResponse]) {
         let fetchData: NSFetchRequest<CDWeatherModel> = CDWeatherModel.fetchRequest()
         guard let arr = try? PersistenceService.context.fetch(fetchData) else {
@@ -156,6 +177,9 @@ extension CoreDataManager {
         }
     }
     
+    /*
+     This function will add a single item weather to DB
+     */
     func addWeatherToLocalList(city: WeatherResponse) {
         
         if let oldObj = self.getCityFromDb(name: city.cityName) {
@@ -174,6 +198,9 @@ extension CoreDataManager {
         PersistenceService.saveContext()
     }
     
+    /*
+     This function will remove weather by name from DB 
+     */
     func removeWeatherFromLocalList(name: String) {
         if let oldObj = self.getCityFromDb(name: name) {
             PersistenceService.context.delete(oldObj)

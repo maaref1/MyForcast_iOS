@@ -49,7 +49,6 @@ class HomePageVC: BasePageVC {
         self.mTableView.register(WeatherHomeCell.nib(),
                                  forCellReuseIdentifier: WeatherHomeCell.nibName)
         
-        // self.tableManager.setListData(list: [1, 2, 3, 4, 5])
         self.mTableView.reloadData()
     }
     

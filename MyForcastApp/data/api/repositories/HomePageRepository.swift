@@ -19,6 +19,9 @@ protocol HomePageRepository {
 
 extension MyBaseRepository: HomePageRepository {
     
+    /*
+     This function will get list of weathers by lat, lon position
+     */
     func callGetListWeathersLonLat(lon: String,
                                    lat: String,
                                    completion: @escaping(CompletionListWeather)) {

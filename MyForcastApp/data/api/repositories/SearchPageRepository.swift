@@ -18,6 +18,9 @@ protocol SearchPageRepository {
 
 extension MyBaseRepository: SearchPageRepository {
     
+    /*
+     This function will search from cities by a given name
+     */
     func searchListCitiesByName(value: String,
                                 completion: @escaping(CompletionListCities)) {
         let params: [String: Any] = [

@@ -24,6 +24,7 @@ class DetailsPageVM {
         self.initServiceObservable()
     }
     
+    // This function will be used to observe actions sent by the View
     func initInputObservable() {
         self.inputAction.subscribe { input in
             switch input {
@@ -36,6 +37,7 @@ class DetailsPageVM {
         }.disposed(by: disposeBag)
     }
     
+    // This function will observe the response sent by Service
     func initServiceObservable() {
         self.mService.serviceOutput.subscribe { result in
             self.sendOutputResponse(result: result, error: nil)
@@ -44,6 +46,7 @@ class DetailsPageVM {
         }.disposed(by: disposeBag)
     }
     
+    // This function will trait and send back data to View
     func sendOutputResponse(result: DetailsServiceOutputResult, error: Error?) {
         switch result {
         case .didFinish:

@@ -43,7 +43,6 @@ class SearchPageVC: BasePageVC {
     }
     
     func initSubViews() {
-        self.initTapButtons()
         self.initTextFieldsChanged()
         self.initTableView()
     }
@@ -63,9 +62,7 @@ class SearchPageVC: BasePageVC {
                                            for: .editingChanged)
     }
     
-    func initTapButtons() {
-    }
-    
+    // This function will observe actions given by the ViewModel
     func initOutputObservable() {
         self.viewModel.outputAction.subscribe { result in
             switch result {

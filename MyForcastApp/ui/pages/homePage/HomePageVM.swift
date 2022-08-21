@@ -88,6 +88,7 @@ class HomePageVM {
  This extension to handle displayed list weathers
  */
 extension HomePageVM {
+    // This function will get item weather by index
     func getItemsByIndex(index: Int) -> WeatherResponse? {
         guard index >= 0 && index < self.model.filtredList.count else {
             return nil
@@ -95,14 +96,17 @@ extension HomePageVM {
         return self.model.filtredList[index]
     }
     
+    // This function will get count filtred list
     func getCountListFiltred() -> Int {
         return self.model.filtredList.count
     }
     
+    // This function will get filtred list
     func getFiltredList() -> [WeatherResponse] {
         return self.model.filtredList
     }
     
+    // This function will get item weather by name
     func filterListByCityName(name: String) {
         guard !name.isEmpty else {
             self.model.filtredList = self.model.fullListForcast
@@ -121,6 +125,7 @@ extension HomePageVM {
  This extension to manage cities add, edit, remove from localDB
  */
 extension HomePageVM {
+    // This function will remove item by index
     func removeItemAtIndex(index: Int) {
         guard let item = self.getItemsByIndex(index: index) else {
             return
@@ -129,6 +134,7 @@ extension HomePageVM {
         self.outputAction.onNext(.didDeleteItemWeather)
     }
     
+    // This function will get list of cities from DB
     func loadListCitiesFromLocalDB() {
         self.model.listCities = []
         let listLocal = CoreDataManager.shared.getListCities()

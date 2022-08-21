@@ -31,19 +31,18 @@ class DetailsPageVC: BasePageVC {
         self.initSubViews()
     }
     
+    // This function will be used to init actions of views with code
     func initSubViews() {
         self.initTapButtons()
-        self.initTextFieldsChanged()
         self.initView(model: self.model)
     }
     
-    func initTextFieldsChanged() {
-    }
-    
+    // This function will init buttons actions
     func initTapButtons() {
         self.imgBackBtn.setOnClickListener(target: self, action: #selector(onBackButtonClick))
     }
     
+    // This function will fill the weather's data into the page's views
     func initView(model: WeatherResponse?) {
         guard let model = model,
               let cityWeather = model.current else {
@@ -69,10 +68,12 @@ class DetailsPageVC: BasePageVC {
         self.lbCloudView.text = "\(cityWeather.clouds ?? 0) %"
     }
     
+    // This function will handle the click on the backButton
     @objc func onBackButtonClick(_ tap: UITapGestureRecognizer) {
         self.myCoordinator?.dismissCurrentVC()
     }
     
+    // This function will observe actions given by the ViewModel
     func initOutputObservable() {
         self.viewModel.outputAction.subscribe { result in
             switch result {

@@ -28,10 +28,16 @@ struct MYCoordinator {
         }
     }
     
+    /*
+     this function will change the currently displayed VC saved instance
+     */
     mutating func setCurrentlyPresentedVC(vcPage: UIViewController) {
         self.currentPresentedVC = vcPage
     }
     
+    /*
+     This function will dismiss the currently presented VC
+     */
     func dismissCurrentVC() {
         self.currentPresentedVC?.dismiss(animated: true)
     }

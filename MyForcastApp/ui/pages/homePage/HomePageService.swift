@@ -22,16 +22,26 @@ class HomePageService: HomePageServiceProtocol {
         self.apiClient = api
     }
     
-    // This function presents a none Service
+    /*
+     This function will represent an empty Service as default service with no action
+     */
     func noneService() {
         self.serviceOutput.onNext(HomePageOutputResult.didFinish(result: true))
     }
     
+    /*
+     This function will get list of cities either from a web's Api and/or from local db if exists
+     */
     func loadWeatherForCities(cities: [ResultCity]) {
+        // will get saved list, then update tableView if list not empty
         self.sendSavedListIfExists(cities: cities)
+        // meanwhile we execute a fetch on api to get the newest list weathers
         self.performGetWeatherFromApi(cities: cities)
     }
     
+    /*
+     This function will get list of weather from Api by list of cities
+     */
     func performGetWeatherFromApi(cities: [ResultCity], completion: (() -> Void)? = nil) {
         guard !cities.isEmpty else {
             completion?()
@@ -57,6 +67,9 @@ class HomePageService: HomePageServiceProtocol {
         }
     }
     
+    /*
+     This function will get the list of cities from local DB
+     */
     func sendSavedListIfExists(cities: [ResultCity]) {
         var listWeather: [WeatherResponse] = []
         listWeather = CoreDataManager.shared.getListWeathers()

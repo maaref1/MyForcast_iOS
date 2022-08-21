@@ -28,6 +28,9 @@ class PersistenceService {
         return container
     }()
     
+    /*
+     This function will save the new changes to the DB
+     */
     static func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -42,6 +45,9 @@ class PersistenceService {
         }
     }
     
+    /*
+     This function will delete entity by name
+     */
     static func deleteEntityByName(name: String) {
         if let appEntity = NSEntityDescription.entity(forEntityName: name, in: context) {
             

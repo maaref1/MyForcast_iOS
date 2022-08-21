@@ -26,6 +26,9 @@ class CityItemCell: UITableViewCell {
         // Initialization code
     }
     
+    /*
+     This function will fill city's data to the cell's views
+     */
     func initView(model: ResultCity) {
         self.model = model
         self.lbNameCity.text = "\(model.name) [\(model.country)]"
@@ -34,6 +37,9 @@ class CityItemCell: UITableViewCell {
         self.contentView.setOnClickListener(target: self, action: #selector(onClickCell))
     }
     
+    /*
+     This function will handle the click on the cell content
+     */
     @objc func onClickCell(_ tap: UITapGestureRecognizer) {
         self.delegate?.onClickCityItemCell(model: self.model)
     }
