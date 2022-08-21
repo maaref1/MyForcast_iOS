@@ -1,5 +1,5 @@
 # MyForcastApp
-Cette application pour un target SDK: 11
+target SDK: 11
 ## Architecture
 MVVM-C
 ## Description
