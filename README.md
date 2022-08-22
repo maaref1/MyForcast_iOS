@@ -1,9 +1,14 @@
 # MyForcastApp
-target SDK: 11
+target_SDK: 11
+
 ## Architecture
 MVVM-C
+
 ## Description
-L'application permet de lister les éléments météo pour les pays ajoutés à l'application et d'afficher les détails pour un élément sélectionné de cette liste..
+MyForcastApp permet de :
+* Lister les détails des prévisions météo pour des zones/ pays introduits par l’utilisateur.
+* Afficher des informations plus granulaires en sélectionnant un élément ajouté.
+
 ## Demo de l'application
 ![Alt text](ReadMeImages/demo_img_app.png?raw=true "Demo")
 
