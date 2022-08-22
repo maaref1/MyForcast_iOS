@@ -26,11 +26,13 @@ class DetailsPageVM {
     
     // This function will be used to observe actions sent by the View
     func initInputObservable() {
-        self.inputAction.subscribe { input in
+        self.inputAction.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { input in
             switch input {
             case .performAction:
                 self.mService.noneService()
-
+                
             }
         } onError: { _ in
         } onCompleted: {
@@ -39,11 +41,13 @@ class DetailsPageVM {
     
     // This function will observe the response sent by Service
     func initServiceObservable() {
-        self.mService.serviceOutput.subscribe { result in
-            self.sendOutputResponse(result: result, error: nil)
-        } onError: { _ in
-        } onCompleted: {
-        }.disposed(by: disposeBag)
+        self.mService.serviceOutput.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { result in
+                self.sendOutputResponse(result: result, error: nil)
+            } onError: { _ in
+            } onCompleted: {
+            }.disposed(by: disposeBag)
     }
     
     // This function will trait and send back data to View
@@ -51,7 +55,7 @@ class DetailsPageVM {
         switch result {
         case .didFinish:
             break
-
+            
         default:
             break
         }

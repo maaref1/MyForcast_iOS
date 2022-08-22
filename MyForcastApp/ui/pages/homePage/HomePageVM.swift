@@ -30,40 +30,44 @@ class HomePageVM {
     
     // This function will be used to observe actions sent by the View
     func initInputObservable() {
-      
-        self.inputAction.subscribe { input in
-            switch input {
-            case .loadListCities:
-                self.loadListCitiesFromLocalDB()
-                self.mService.loadWeatherForCities(cities: self.model.listCities)
-                
-            case .searchForCity(let name):
-                self.filterListByCityName(name: name)
-                
-            case .didSelectWeatherItem(let model):
-                self.outputAction.onNext(.didSelectWeatherItem(result: model))
-                
-            case .deleteItemAt(let index):
-                self.removeItemAtIndex(index: index)
-                
-            }
-        } onError: { _ in
-            print("on error")
-        } onCompleted: {
-            print("completed")
-        }.disposed(by: disposeBag)
-
+        
+        self.inputAction.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { input in
+                switch input {
+                case .loadListCities:
+                    self.loadListCitiesFromLocalDB()
+                    self.mService.loadWeatherForCities(cities: self.model.listCities)
+                    
+                case .searchForCity(let name):
+                    self.filterListByCityName(name: name)
+                    
+                case .didSelectWeatherItem(let model):
+                    self.outputAction.onNext(.didSelectWeatherItem(result: model))
+                    
+                case .deleteItemAt(let index):
+                    self.removeItemAtIndex(index: index)
+                    
+                }
+            } onError: { _ in
+                print("on error")
+            } onCompleted: {
+                print("completed")
+            }.disposed(by: disposeBag)
+        
     }
     
     // This function will observe the response sent by Service
     func initServiceObservable() {
-        self.mService.serviceOutput.subscribe { res in
-            if let res = res as? HomePageOutputResult {
-                self.sendOutputResponse(result: res, error: nil)
-            }
-        } onError: { _ in
-        } onCompleted: {
-        }.disposed(by: disposeBag)
+        self.mService.serviceOutput.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { res in
+                if let res = res as? HomePageOutputResult {
+                    self.sendOutputResponse(result: res, error: nil)
+                }
+            } onError: { _ in
+            } onCompleted: {
+            }.disposed(by: disposeBag)
     }
     
     // This function will trait and send back data to View
@@ -76,7 +80,7 @@ class HomePageVM {
                 self.model.filtredList = listWeathers
             }
             // save or do some treatment here
-
+            
         default:
             break
         }

@@ -69,7 +69,9 @@ class HomePageVC: BasePageVC {
     
     // This function will observe actions given by the ViewModel
     func initOutputObservable() {
-        self.viewModel.outputAction.subscribe { result in
+        self.viewModel.outputAction.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { result in
             switch result {
             case .next(let res):
                 self.handleViewModelActions(action: res)

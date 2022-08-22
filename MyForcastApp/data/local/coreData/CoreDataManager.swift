@@ -104,6 +104,7 @@ extension CoreDataManager {
         if let oldObj = self.getCityFromDb(name: name) {
             PersistenceService.context.delete(oldObj)
             PersistenceService.saveContext()
+            self.removeWeatherFromLocalList(name: name)
         }
     }
 }
@@ -197,7 +198,7 @@ extension CoreDataManager {
      This function will remove weather by name from DB 
      */
     func removeWeatherFromLocalList(name: String) {
-        if let oldObj = self.getCityFromDb(name: name) {
+        if let oldObj = self.getWeatherFromDb(name: name) {
             PersistenceService.context.delete(oldObj)
             PersistenceService.saveContext()
         }

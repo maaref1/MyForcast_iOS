@@ -11,7 +11,7 @@ protocol SearchCityVCDelegate: AnyObject {
 }
 
 class SearchPageVC: BasePageVC {
-
+    
     @IBOutlet weak var mTableView: UITableView!
     @IBOutlet weak var mTextFieldSearch: UITextField!
     
@@ -30,7 +30,7 @@ class SearchPageVC: BasePageVC {
     lazy var tableManager: MySearchTableManagerProtocol = {
         return MySearchTableManager(viewModel: self.viewModel)
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initOutputObservable()
@@ -58,26 +58,28 @@ class SearchPageVC: BasePageVC {
     func initTextFieldsChanged() {        
         self.mTextFieldSearch.delegate = self
         self.mTextFieldSearch.addTarget(self,
-                                           action: #selector(textFieldEditingDidChange(_:)),
-                                           for: .editingChanged)
+                                        action: #selector(textFieldEditingDidChange(_:)),
+                                        for: .editingChanged)
     }
     
     // This function will observe actions given by the ViewModel
     func initOutputObservable() {
-        self.viewModel.outputAction.subscribe { result in
-            switch result {
-            case .next(let res):
-                self.handleViewModelActions(action: res)
-                
-            case .error(let err):
-                print("error found: \(err)")
-                
-            case .completed:
-                break
-            }
-        }.disposed(by: disposeBag)
+        self.viewModel.outputAction.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { result in
+                switch result {
+                case .next(let res):
+                    self.handleViewModelActions(action: res)
+                    
+                case .error(let err):
+                    print("error found: \(err)")
+                    
+                case .completed:
+                    break
+                }
+            }.disposed(by: disposeBag)
     }
-
+    
     // This function will handle the actions sent by the VM
     func handleViewModelActions(action: SearchPageOutputResult) {
         switch action {
@@ -108,10 +110,10 @@ class SearchPageVC: BasePageVC {
 }
 
 /*
-    This extension is to handle the TextField's changes
+ This extension is to handle the TextField's changes
  */
 extension SearchPageVC: UITextFieldDelegate {
-
+    
     /*
      This function is used to handle textChanging
      */

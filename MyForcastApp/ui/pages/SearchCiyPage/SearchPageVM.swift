@@ -26,7 +26,9 @@ class SearchPageVM {
     
     // This function will be used to observe actions sent by the View
     func initInputObservable() {
-        self.inputAction.subscribe { input in
+        self.inputAction.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { input in
             switch input {
             case .searchForCity(let name):
                 self.mService.searchForCityByName(value: name)
@@ -40,11 +42,13 @@ class SearchPageVM {
     
     // This function will observe the response sent by Service
     func initServiceObservable() {
-        self.mService.serviceOutput.subscribe { result in
-            self.sendOutputResponse(result: result, error: nil)
-        } onError: { _ in
-        } onCompleted: {
-        }.disposed(by: disposeBag)
+        self.mService.serviceOutput.subscribe(on: ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe { result in
+                self.sendOutputResponse(result: result, error: nil)
+            } onError: { _ in
+            } onCompleted: {
+            }.disposed(by: disposeBag)
     }
     
     // This function will trait and send back data to View
