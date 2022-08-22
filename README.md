@@ -5,7 +5,6 @@ target_SDK: 11
 Reactive MVVM-C
 
 ## Technologies utilisées
-__Strong text__
 
     RxSwift :  Programmation réactive
     CoreData: Base de donnée local
