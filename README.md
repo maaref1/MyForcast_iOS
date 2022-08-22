@@ -2,7 +2,15 @@
 target_SDK: 11
 
 ## Architecture
-MVVM-C
+Reactive MVVM-C
+
+## Technologies utilisées
+__Strong text__
+
+    RxSwift :  Programmation réactive
+    CoreData: Base de donnée local
+    SwiftLint: Revue de code
+    XCTest: Unit Test
 
 ## Description
 MyForcastApp permet de :
