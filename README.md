@@ -21,7 +21,7 @@ MyForcastApp permet de :
 ![Alt text](ReadMeImages/demo_img_app.png?raw=true "Demo")
 
 ## Video Demo de l'application
-![Alt text](ReadMeImages/demo_video.GIF)
+<img src="ReadMeImages/demo_video.GIF" width="250" height="541" />
 
 ## Diagram du sequence
 ![Alt text](ReadMeImages/seq_diagram.png?raw=true "Diagram du sequence")
