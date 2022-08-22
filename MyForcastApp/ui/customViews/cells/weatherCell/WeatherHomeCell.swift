@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 protocol WeatherItemCellDelegate: AnyObject {
     func onClickItemCell(model: WeatherResponse?)
