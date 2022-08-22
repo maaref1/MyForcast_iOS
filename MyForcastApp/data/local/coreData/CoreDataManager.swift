@@ -165,36 +165,31 @@ extension CoreDataManager {
         }
         
         list.forEach { item in
-            let model = CDWeatherModel(context: PersistenceService.context)
-            model.name = item.cityName
-            model.desc = item.districtName
-            model.temp = Double(item.current?.temp ?? 0)
-            model.windSpeed = Double(item.current?.windSpeed ?? 0)
-            model.humidity = Double(item.current?.humidity ?? 0)
-            model.pressure = Double(item.current?.pressure ?? 0)
-            model.clouds = Double(item.current?.clouds ?? 0)
-            PersistenceService.saveContext()
+            self.saveSingleWeatherToDb(weatherModel: item)
         }
     }
     
     /*
      This function will add a single item weather to DB
      */
-    func addWeatherToLocalList(city: WeatherResponse) {
-        
-        if let oldObj = self.getCityFromDb(name: city.cityName) {
+    func addWeatherToLocalList(weatherModel: WeatherResponse) {
+        if let oldObj = self.getCityFromDb(name: weatherModel.cityName) {
             PersistenceService.context.delete(oldObj)
             PersistenceService.saveContext()
         }
+        self.saveSingleWeatherToDb(weatherModel: weatherModel)
+    }
+    
+    func saveSingleWeatherToDb(weatherModel: WeatherResponse) {
         let model = CDWeatherModel(context: PersistenceService.context)
-        model.name = city.cityName
-        model.desc = city.districtName
-        model.temp = city.current?.temp ?? 0
-        model.windSpeed = city.current?.windSpeed ?? 0
-        model.humidity = Double(city.current?.humidity ?? 0)
-        model.pressure = Double(city.current?.pressure ?? 0)
-        model.clouds = Double(city.current?.clouds ?? 0)
-        model.imgWeather = city.current?.weather.first?.icon ?? ""
+        model.name = weatherModel.cityName
+        model.desc = weatherModel.districtName
+        model.temp = weatherModel.current?.temp ?? 0
+        model.windSpeed = weatherModel.current?.windSpeed ?? 0
+        model.humidity = Double(weatherModel.current?.humidity ?? 0)
+        model.pressure = Double(weatherModel.current?.pressure ?? 0)
+        model.clouds = Double(weatherModel.current?.clouds ?? 0)
+        model.imgWeather = weatherModel.current?.weather.first?.icon ?? ""
         PersistenceService.saveContext()
     }
     

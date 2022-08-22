@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension CDWeatherModel {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CDWeatherModel> {

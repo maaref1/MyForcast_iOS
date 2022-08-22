@@ -53,19 +53,25 @@ class DetailsPageVC: BasePageVC {
         self.lbDistrictName.text = self.model?.districtName ?? ""
         self.lbTempView.text = "\(cityWeather.temp ?? 0)° C"
         
-        if let firstWeather = cityWeather.weather.first {
-            let imgPath = MyConstants.pathImgIcon.replacingOccurrences(of: "**_**", with: firstWeather.icon ?? "")
-            self.imgIconWeather.sd_setImage(with: URL(string: imgPath),
-                                            placeholderImage: UIImage(named: ""),
-                                            options: .waitStoreCache) {  _, _, _, _ in
-            }
-        }
         let windSpeed = model.current?.windSpeed ?? 0
         
         self.lbWindView.text = "\(windSpeed) mph"
         self.lbHumidityView.text = "\(cityWeather.humidity ?? 0) %"
         self.lbPressureView.text = "\(cityWeather.pressure ?? 0) mb"
         self.lbCloudView.text = "\(cityWeather.clouds ?? 0) %"
+        
+        if let firstWeather = cityWeather.weather.first {
+            let iconName = firstWeather.icon ?? ""
+            let imgPath = MyConstants.pathImgIcon.replacingOccurrences(of: "**_**", with: iconName)
+            
+            let img = UIImage(named: iconName)
+            guard let url = URL(string: imgPath),
+                  img == nil else {
+                self.imgIconWeather.image = img
+                return
+            }
+            self.imgIconWeather.load(url: url)
+        }
     }
     
     // This function will handle the click on the backButton
