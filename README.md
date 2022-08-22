@@ -8,6 +8,7 @@ Reactive MVVM-C
 __Strong text__
 
     RxSwift :  Programmation réactive
+    CoreData: Base de donnée local
     SwiftLint: Revue de code
     XCTest: Unit Test
 
